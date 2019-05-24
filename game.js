@@ -641,21 +641,21 @@ var player = {
 	currencies: {
 		money: {
 		    name: 'money',
-			supply: 0.00,
-			progress: 0,
-			power: 1,
-			quantity: 1,
-			multiplier: 1.0,
-			workers: 0
+			supply: 99.99,
+			progress: 100,
+			power: 100,
+			quantity: 100,
+			multiplier: 99.99,
+			workers: 9999
 		}
 	},
 	click: {
-		power: 1,
+		power: 999,
 		throttle: 0,
 		throttlePerSecond: 5
 	},
-	passiveMoney: 0.00,
-	workers: 0,
+	passiveMoney: 99.99,
+	workers: 9999,
 	workersUsed: 0,
 	workerCost: 15,
 	workerCostFactor: 0.15,
