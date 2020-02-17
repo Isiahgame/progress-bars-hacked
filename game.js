@@ -281,7 +281,7 @@ var player = {
 		money: {
 		    name: 'Money',
 			supply: 9999999999999999999999999999999999,
-			progress: 0,
+			progress: 9999999999999999999999999999999999,
 			power: 1,
 			quantity: 1,
 			multiplier: 1.0,
