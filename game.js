@@ -279,8 +279,8 @@ var upgrades = {
 var player = {
 	currencies: {
 		money: {
-		    name: 'money',
-			supply: 0.00,
+		    name: 'Money',
+			supply: 9999999999999999999999999999999999,
 			progress: 0,
 			power: 1,
 			quantity: 1,
