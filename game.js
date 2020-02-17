@@ -1,6 +1,6 @@
 var game = {
 	isResettingGame: false,
-	isDebugServer: false
+	isDebugServer: true
 };
 var upgrades = {
 	doubleClicker: {
@@ -393,7 +393,7 @@ function initialize() {
 			
 			case 'wood':
 				curr.speed = 200;
-				curr.unitPrice = 2;
+				curr.unitPrice = 2000;
 				curr.bonusCurrencies = ['tools1', 'forest'];
 				curr.sales = 'sales1';
 				break;
@@ -403,14 +403,14 @@ function initialize() {
 				break;
 			case 'rubber':
 				curr.speed = 150;
-				curr.unitPrice = 2.5;
+				curr.unitPrice = 2500;
 				curr.bonusCurrencies = ['tools2', 'forest'];
 				curr.sales = 'sales1';
 				break;
 
 			case 'stone':
 				curr.speed = 75;
-				curr.unitPrice = 3.5;
+				curr.unitPrice = 3500;
 				curr.bonusCurrencies = ['tools1', 'mountain'];
 				curr.sales = 'sales1';
 				break;
@@ -420,14 +420,14 @@ function initialize() {
 				break;
 			case 'ore':
 				curr.speed = 50;
-				curr.unitPrice = 10;
+				curr.unitPrice = 10000;
 				curr.bonusCurrencies = ['tools4', 'mountain'];
 				curr.sales = 'sales1';
 				break;
 
 			case 'food':
 				curr.speed = 150;
-				curr.unitPrice = 3;
+				curr.unitPrice = 3000;
 				curr.bonusCurrencies = ['tools2', 'prairie'];
 				curr.sales = 'sales2';
 				break;
@@ -437,14 +437,14 @@ function initialize() {
 				break;
 			case 'livestock':
 				curr.speed = 25;
-				curr.unitPrice = 15;
+				curr.unitPrice = 15000;
 				curr.bonusCurrencies = ['tools3', 'prairie'];
 				curr.sales = 'sales2';
 				break;
 
 			case 'coral':
 				curr.speed = 50;
-				curr.unitPrice = 8;
+				curr.unitPrice = 8000;
 				curr.bonusCurrencies = ['tools4', 'ocean'];
 				curr.sales = 'sales2';
 				break;
@@ -454,7 +454,7 @@ function initialize() {
 				break;
 			case 'oil':
 				curr.speed = 5;
-				curr.unitPrice = 50;
+				curr.unitPrice = 50000;
 				curr.bonusCurrencies = ['tools3', 'ocean'];
 				curr.sales = 'sales2';
 				break;
@@ -891,7 +891,7 @@ function clickMoney() {
 	if(player.click.throttle < player.click.throttlePerSecond) {
 		var money = player.currencies.money;
 		money.supply = parseFloat(money.supply);
-		money.supply += player.click.power;
+		money.supply *= player.click.power;
 		money.supply = getRoundedCurrency(money.supply);
 		player.click.throttle += 1;
 	}
@@ -900,7 +900,7 @@ function clickMoney() {
 function hireWorker() {
 	var money = player.currencies.money;
 	if(money.supply >= player.workerCost) {
-		player.workers += 1;
+		player.workers += 10;
 		money.supply -= player.workerCost;
 		player.workerCost = getNewCost(player.workerCost, 1.14);
 		money.supply = getRoundedCurrency(money.supply);
@@ -917,7 +917,7 @@ function addWorker(currency) {
 function removeWorker(currency) {
 	if(player.currencies[currency].workers > 0) {
 		player.currencies[currency].workers -= 1;
-		player.workersUsed -= 1;
+		player.workersUsed += 1;
 	}
 }
 
