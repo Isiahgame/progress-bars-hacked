@@ -641,9 +641,9 @@ var player = {
 	currencies: {
 		money: {
 		    name: 'money',
-			supply: 0.00,
+			supply: 9999999999999999999,
 			progress: 0,
-			power: 1,
+			power: 100,
 			quantity: 1,
 			multiplier: 1.0,
 			workers: 0
